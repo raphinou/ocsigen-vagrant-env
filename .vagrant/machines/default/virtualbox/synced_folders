@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/rb/dev/ocsigen-vagrant"}},"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/rb/dev/ocsigen-vagrant","owner":"vagrant","group":"vagrant"}}}
