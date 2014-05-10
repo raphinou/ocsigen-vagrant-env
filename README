@@ -1,0 +1,3 @@
+Simply launch vagrant up and the vm will be built with an ubuntu 14.04,
+using the system's ocaml and opam version, and using opam to install
+the dev versions of ocsigen and related packages.
