@@ -1,3 +1,39 @@
-Simply launch vagrant up and the vm will be built with an ubuntu 14.04,
-using the system's ocaml and opam version, and using opam to install
-the dev versions of ocsigen and related packages.
+First install vagrant from http://www.vagrantup.com
+
+Once installed, download this project, eg with git:
+
+  git clone https://github.com/raphinou/ocsigen-vagrant-env.git
+  
+Then go in the directory and simply run 
+
+  vagrant up 
+
+and the vm will be built with an ubuntu 14.04, using the system's ocaml and opam version.
+
+The installation of the opam packages is done by the script provisioning.sh
+Two versions of this script are provided:
+  * provisioning-dev.sh which installs the latests development version of packages
+  * provisioning-prod.sh which installs the production, stable versions
+To use either of those, just copy or link the file as provisioning.sh.
+
+The src subdirectory is mounted in the virtual machine under /vagrant.
+To run your code in the virtual machine started by vagrant, you may create
+a src subdirectory containing your code. Then you log in the virtual machine with 
+  
+  vagrant ssh
+
+You can then go in your src directory:
+  
+  cd /vagrant
+
+and compile and run your project as usual.
+
+The port 8080 of you computer is mapped to the port 8080 of the virtual machine. To access
+you ocsigen app from your desktop you can thus open http://localhost:8080 in your browser.
+
+Working on the source code can be done either from the host running vagrant, or from within 
+the virtual machine. One thing to note is that the mounted filesystem does not support the
+creation of fifo, and so the <commandpipe> setting in the ocsigen config file has to be set
+to a path out of the /vagrant directory, eg /tmp/ocsigen-app-cmd
+
+Vagrant itself is configured with the Vagranfile.

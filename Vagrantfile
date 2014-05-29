@@ -121,6 +121,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.validation_client_name = "ORGNAME-validator"
   #
   config.vm.provision :shell, :path => "provisioning.sh"
-  config.vm.synced_folder ".", "/vagrant"#, :type => "rsync"
+  config.vm.synced_folder "src", "/vagrant"#, :type => "rsync"
 
 end
