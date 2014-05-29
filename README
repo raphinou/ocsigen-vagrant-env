@@ -4,11 +4,12 @@ Once installed, download this project, eg with git:
 
   git clone https://github.com/raphinou/ocsigen-vagrant-env.git
   
-Then go in the directory and simply run 
+Then go in the directory and first create the directory src, then start the virtual machine:
 
+  mkdir src
   vagrant up 
 
-and the vm will be built with an ubuntu 14.04, using the system's ocaml and opam version.
+The vm will be built with an ubuntu 14.04, using the system's ocaml and opam version.
 
 The installation of the opam packages is done by the script provisioning.sh
 Two versions of this script are provided:
